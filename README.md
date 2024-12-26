@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
@@ -37,3 +38,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 # CA-website
 c7d3325b64de11f76b2bee78e3b1afd0e7c43caa
+=======
+# ca-website
+>>>>>>> b18f3c3af4793816053bcb7ed1a0bdbec9f03db0
