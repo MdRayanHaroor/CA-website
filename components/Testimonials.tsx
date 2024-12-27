@@ -9,19 +9,19 @@ import { Button } from "@/components/ui/button"
 const testimonials = [
   {
     company: "Ideassion Technology Solutions LLP",
-    logo: "/placeholder.svg?height=50&width=50",
+    //logo: "/placeholder.svg?height=50&width=50",
     quote: "I was impressed by the personalized attention and expertise provided by Owaise and Associates. Their team guided me through complex financial matters with ease, making them my top choice for accounting services."
   },
   {
     company: "Offisbay Realty Private Limited",
-    logo: "/placeholder.svg?height=50&width=50",
+    //logo: "/placeholder.svg?height=50&width=50",
     quote: "Owaise and Associates exceeded my expectations with their professionalism and attention to detail. Their tailored financial solutions have significantly improved the financial health of my business."
   },
-  {
-    company: "Eva Care Life Sciences Private Limited",
-    logo: "/placeholder.svg?height=50&width=50",
-    quote: "Choosing Owaise and Associates for my accounting needs was a decision I'll never regret. Their dedication to transparency and accuracy in tax solutions sets them apart in the industry."
-  }
+  // {
+  //   company: "Eva Care Life Sciences Private Limited",
+  //   //logo: "/placeholder.svg?height=50&width=50",
+  //   quote: "Choosing Owaise and Associates for my accounting needs was a decision I'll never regret. Their dedication to transparency and accuracy in tax solutions sets them apart in the industry."
+  // }
 ]
 
 export default function Testimonials() {
@@ -48,13 +48,13 @@ export default function Testimonials() {
             <Card className="bg-white hover:shadow-lg transition-shadow duration-300">
               <CardContent className="p-6">
                 <div className="flex items-start gap-6">
-                  <div className="relative w-12 h-12 flex-shrink-0">
-                    <Image
+                  <div className="relative w-3 h-12 flex-shrink-0">
+                    {/* <Image
                       src={testimonials[currentTestimonial].logo}
                       alt={testimonials[currentTestimonial].company}
                       fill
                       className="object-contain"
-                    />
+                    /> */}
                   </div>
                   <div>
                     <p className="text-gray-600 mb-4 italic">&ldquo;{testimonials[currentTestimonial].quote}&rdquo;</p>
