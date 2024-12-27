@@ -18,10 +18,13 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-6">
             <p className="text-lg text-gray-700">
-              OWAISE AND ASSOCIATES is a leading accounting firm based in Chennai, providing comprehensive financial services to businesses and individuals. With our extensive experience and expertise, we have established ourselves as a trusted partner for all accounting, tax, and financial consulting needs.
+              OWAISE AND ASSOCIATES is a leading accounting firm based in Chennai, providing comprehensive financial services to businesses and individuals across Tamil Nadu. With our extensive experience and deep understanding of local and national financial regulations, we have established ourselves as trusted partners for all accounting, auditing, tax, and financial consulting needs in Chennai and beyond.
             </p>
             <p className="text-lg text-gray-700">
               Located at 190-192, 3rd Floor, Offisbay, Hamid Building, Anna Salai, Chennai, we serve clients across Tamil Nadu with dedication and professionalism. Our team of experienced professionals is committed to delivering exceptional service and innovative solutions.
+            </p>
+            <p className="text-lg text-gray-700">
+              Our team of expert auditors, tax consultants, and financial advisors in Chennai are committed to delivering exceptional service tailored to the unique needs of businesses in Tamil Nadu. Whether you're a startup, an established corporation, or an individual seeking professional financial guidance, OWAISE AND ASSOCIATES is your go-to accounting firm in Chennai.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
               {highlights.map((highlight, index) => (

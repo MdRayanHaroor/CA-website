@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { MapPin, Phone, Mail } from 'lucide-react'
 import Map from '@/components/Map'
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { metadata } from './metadata'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -58,6 +59,9 @@ export default function ContactPage() {
         <h1 className="text-4xl font-bold text-center mb-4">Contact Us</h1>
         <p className="text-xl text-gray-600 text-center mb-12">
           Get in touch with our expert team
+        </p>
+        <p className="text-xl text-gray-600 text-center mb-12">
+          Whether you need accounting services, auditing, tax consultation, or financial advice in Chennai, our team of experienced professionals is here to assist you. As one of the top accounting firms in Tamil Nadu, we're committed to providing tailored solutions that meet the unique needs of your business.
         </p>
         {notification && (
           <Alert variant={notification.type === 'success' ? "default" : "destructive"} className="mb-6">
@@ -136,4 +140,3 @@ export default function ContactPage() {
     </div>
   )
 }
-

@@ -2,22 +2,33 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
+export const metadata = {
+  title: 'Our Services | OWAISE AND ASSOCIATES - Chennai\'s Premier Accounting Firm',
+  description: 'Comprehensive accounting services, auditing, tax consultation, and financial advisory in Chennai. Expert solutions tailored for businesses in Tamil Nadu.',
+  keywords: 'accounting services Chennai, auditors Chennai, tax consultation Tamil Nadu, financial advisory Chennai, Owaise Associates services',
+}
+
 export default function ServicesPage() {
   const services = [
     {
       title: "Accounting Services",
-      description: "Comprehensive accounting solutions including bookkeeping, financial statements, and reporting. We ensure accurate record-keeping and timely financial insights for your business.",
-      duration: "1 hr 30 min",
+      description: "Comprehensive accounting solutions including bookkeeping, financial statements, and reporting. Our expert team in Chennai ensures accurate record-keeping and timely financial insights for your business in Tamil Nadu.",
+      duration: "Ongoing",
+    },
+    {
+      title: "Auditing",
+      description: "Thorough audit services by certified auditors in Chennai. We verify financial accuracy, assess internal controls, and provide assurance to stakeholders about your financial statements, ensuring compliance with Indian accounting standards.",
+      duration: "2-4 weeks",
     },
     {
       title: "Tax Consultation",
-      description: "Expert tax planning and consultation services to help you navigate complex tax regulations and optimize your tax position while ensuring compliance.",
-      duration: "1 hr",
+      description: "Expert tax planning and consultation services to help Chennai businesses navigate complex tax regulations. Our tax consultants optimize your tax position while ensuring full compliance with local and national tax laws.",
+      duration: "1-2 hours initial consultation",
     },
     {
-      title: "Audit Service",
-      description: "Thorough audit services to verify financial accuracy, assess internal controls, and provide assurance to stakeholders about your financial statements.",
-      duration: "2 hr",
+      title: "Financial Advisory",
+      description: "Strategic financial advice for businesses in Chennai and across Tamil Nadu. Our financial advisors help you make informed decisions, improve financial performance, and achieve your business goals in the competitive Indian market.",
+      duration: "Customized to client needs",
     }
   ]
 
