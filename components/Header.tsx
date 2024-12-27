@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
-import { Menu } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import {
   Sheet,
   SheetContent,
@@ -88,3 +88,4 @@ export default function Header() {
     </header>
   )
 }
+

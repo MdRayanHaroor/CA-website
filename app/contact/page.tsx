@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { MapPin, Phone, Mail } from 'lucide-react'
 import Map from '@/components/Map'
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -14,16 +15,39 @@ export default function ContactPage() {
     email: "",
     message: "",
   })
+  const [isLoading, setIsLoading] = useState(false)
   const [showMap, setShowMap] = useState(false)
+  const [notification, setNotification] = useState<{ type: 'success' | 'error', message: string } | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
-    // Here you would typically send the form data to your server
+    setIsLoading(true)
+    setNotification(null)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        setNotification({ type: 'success', message: "Message sent successfully. We'll get back to you soon!" })
+        setFormData({ name: "", email: "", message: "" })
+      } else {
+        throw new Error('Failed to send message')
+      }
+    } catch (error) {
+      setNotification({ type: 'error', message: "Failed to send message. Please try again." })
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const toggleMap = () => setShowMap(!showMap)
@@ -35,6 +59,12 @@ export default function ContactPage() {
         <p className="text-xl text-gray-600 text-center mb-12">
           Get in touch with our expert team
         </p>
+        {notification && (
+          <Alert variant={notification.type === 'success' ? "default" : "destructive"} className="mb-6">
+            <AlertTitle>{notification.type === 'success' ? "Success" : "Error"}</AlertTitle>
+            <AlertDescription>{notification.message}</AlertDescription>
+          </Alert>
+        )}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <Card>
             <CardHeader>
@@ -70,7 +100,9 @@ export default function ContactPage() {
                     required
                   />
                 </div>
-                <Button type="submit" className="w-full">Send Message</Button>
+                <Button type="submit" className="w-full" disabled={isLoading}>
+                  {isLoading ? "Sending..." : "Send Message"}
+                </Button>
               </form>
             </CardContent>
           </Card>
